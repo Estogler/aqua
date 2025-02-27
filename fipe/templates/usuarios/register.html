@@ -6,16 +6,20 @@
     <title>Cadastro</title>
 </head>
 <body>
-    <h1>Cadastro</h1>
-    <form action="{% url 'usuarios:criar' %}" method="get">
-    { % csrf_token % }
-    { % for field in form %}
+    <fieldset>
+    <legend>Cadastro de Usuario</legend>
+    <form action="{% url 'usuarios:criar' %}" method="GET">
+    {% csrf_token %}
+    {% for field in form %}
     <br>
     {{field}}
     <br>
-    { % endfor %}
-    <button> type="submit">Cadastrar</button>
+    {% endfor %}
+    <br>
+
+    <button type="submit">Cadastrar</button>
     </form>
+    </fieldset>
 </body>
 </html>
 

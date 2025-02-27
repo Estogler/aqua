@@ -4,5 +4,5 @@ from django.urls import path
 app_name = 'usuarios'
 
 urlpatterns = [
-    path('', register_view , name= 'criar'),
+    path('/', register_view , name= 'criar'),
 ]

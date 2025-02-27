@@ -8,9 +8,9 @@ def register_view(request):
         return render(request, 'usuarios/register.html', {'form': form})
     if request.method == 'POST':
         form = UsuarioForm(request.POST)
-    if form.is_valid():
-        form.save()
-        return redirect('usuarios:criar')
+        if form.is_valid():
+            form.save()
+            return redirect('usuarios:criar')
     
     def list_view(request):
         usuarios = Usuario.objects.all()
